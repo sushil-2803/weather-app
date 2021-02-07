@@ -10,6 +10,7 @@ publicDirectoryPath = path.join(__dirname,'../public')
 templateDirectortPath = path.join(__dirname,'../templates/views')
 partialDirectorPath = path.join(__dirname,'../templates/partails')
 
+const port = process.env.PORT || 80
 
 app.use(express.static(publicDirectoryPath))
 
@@ -90,6 +91,6 @@ app.get('*',(req,res)=>{
         message:'You LOST YOUR WAY'
     })
 })
-app.listen(80,'127.0.0.2',()=>{
-console.log('Server is running on 127.0.0.2:80')
+app.listen(port,()=>{
+console.log('Server is running on ' + port)
 })
