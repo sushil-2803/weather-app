@@ -2,9 +2,11 @@ const path = require('path')
 const express= require('express')
 const hbs  = require('hbs')
 const app = express()
+const morgan = require('morgan');
 const geoCode =require('./utils/geoCode')
 const forecast =require('./utils/forecast')
 
+require('dotenv').config();
 //Paths
 publicDirectoryPath = path.join(__dirname,'../public')
 templateDirectortPath = path.join(__dirname,'../templates/views')
@@ -13,6 +15,11 @@ partialDirectorPath = path.join(__dirname,'../templates/partails')
 const port = process.env.PORT || 80
 
 app.use(express.static(publicDirectoryPath))
+
+// Add the logging middleware BEFORE your routes
+// 'common' format includes: IP, date/time, method, URL, status, and content length
+app.use(morgan('combined')); 
+
 
 // HandleBar
 app.set('view engine', 'hbs')
