@@ -1,7 +1,7 @@
 {
   "name": "web-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "npm packages used express,request,hbs.",
   "main": "index.js",
   "scripts": {
     "start": "node src/app.js"
@@ -10,9 +10,20 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^17.2.3",
     "express": "^4.17.1",
     "hbs": "^4.1.1",
+    "morgan": "^1.10.1",
     "request": "^2.88.2",
-    "socket.io": "^3.1.1"
-  }
+    "socket.io": "^4.8.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sushil-2803/weather-app.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/sushil-2803/weather-app/issues"
+  },
+  "homepage": "https://github.com/sushil-2803/weather-app#readme"
 }
